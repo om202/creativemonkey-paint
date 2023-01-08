@@ -4,6 +4,8 @@ const CanvasContext = React.createContext();
 
 export const CanvasProvider = ({ children }) => {
   const [isDrawing, setIsDrawing] = useState(false);
+  const [pencilColor, setPencilColor] = useState('black');
+  const [pencilSize, setPencilSize] = useState(3)
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
@@ -18,7 +20,7 @@ export const CanvasProvider = ({ children }) => {
     context.scale(2, 2);
     context.lineCap = "round";
     context.lineJoin = "round";
-    context.strokeStyle = "black";
+    context.strokeStyle = pencilColor;
     context.lineWidth = 3;
     contextRef.current = context;
   };
@@ -58,6 +60,7 @@ export const CanvasProvider = ({ children }) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.lineWidth = 3;
+    setPencilColor(color);
     context.strokeStyle = color;
   };
 
@@ -71,8 +74,9 @@ export const CanvasProvider = ({ children }) => {
   const pencil = (size = 3) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
-    context.strokeStyle = "black";
+    context.strokeStyle = pencilColor;
     context.lineWidth = size;
+    contextRef.current = context;
   };
 
   return (
