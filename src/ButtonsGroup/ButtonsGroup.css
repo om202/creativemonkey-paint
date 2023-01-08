@@ -36,18 +36,18 @@
 }
 
 .pencil-small {
+  width: 8px;
+  height: 8px;
+}
+
+.pencil-medium {
   width: 16px;
   height: 16px;
 }
 
-.pencil-medium {
+.pencil-large {
   width: 24px;
   height: 24px;
-}
-
-.pencil-large {
-  width: 32px;
-  height: 32px;
 }
 
 
