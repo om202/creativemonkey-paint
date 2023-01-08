@@ -2,6 +2,7 @@
 @import url("../assets/defaultSizes.css");
 
 .buttons-group {
+  border-top: 1rem solid var(--blue);
   border-radius: var(--borderRadius);
   background-color: var(--blueGrey50);
   display: flex;

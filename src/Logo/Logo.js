@@ -5,7 +5,7 @@ import './Logo.css';
 export const Logo = () => {
   return (
     <div className="logo">
-     <GiMonkey className="logo-pic"/>  <span className="logo-text">Creative Monkey</span>
+     <GiMonkey className="logo-pic"/>  <span className="logo-text">Creative Monkey</span> <span>Beta</span>
     </div>
   )
 }
