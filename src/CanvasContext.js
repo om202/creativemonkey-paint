@@ -8,6 +8,7 @@ export const CanvasProvider = ({ children }) => {
   const [pencilSize, setPencilSize] = useState(3)
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
+  const defaultEraserWidth = 30;
 
   const prepareCanvas = () => {
     const canvas = canvasRef.current;
@@ -68,7 +69,7 @@ export const CanvasProvider = ({ children }) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.strokeStyle = "white";
-    context.lineWidth = 30;
+    context.lineWidth = defaultEraserWidth;
   };
 
   const pencil = (size = pencilSize) => {

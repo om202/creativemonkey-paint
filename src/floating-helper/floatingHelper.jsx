@@ -1,6 +1,5 @@
 import React from "react";
-import Draggable from "react-draggable";
-import { ButtonsGroup } from "../ButtonsGroup";
+import Draggable from "react-draggable";  
 
 export const FloatingHelper = ({ children, initial }) => {
   return (

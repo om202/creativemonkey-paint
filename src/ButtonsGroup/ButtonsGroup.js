@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useCanvas } from "./CanvasContext";
-import { BsEraserFill, BsPencilFill } from "react-icons/bs";
+import { useCanvas } from "../CanvasContext";
+import { BsEraserFill } from "react-icons/bs";
 import {GrClearOption} from 'react-icons/gr'
+
 export const ButtonsGroup = () => {
   const { clearCanvas, strokeColor, eraser, pencil } = useCanvas();
 
