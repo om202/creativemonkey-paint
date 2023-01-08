@@ -2,13 +2,16 @@ import React from "react";
 import { Canvas } from "./Canvas";
 import { ButtonsGroup } from "./ButtonsGroup";
 import { Logo } from "./Logo";
+import { FloatingHelper } from "./floating-helper/floatingHelper";
 
 function App() {
   return (
     <>
       <Canvas />
-      <Logo/>
-      <ButtonsGroup />
+      <Logo />
+      <FloatingHelper initial={[30,75]}>
+        <ButtonsGroup/>
+      </FloatingHelper>
     </>
   );
 }
