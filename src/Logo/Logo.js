@@ -1,5 +1,7 @@
 import React from "react"
 import {GiMonkey} from 'react-icons/gi'
+import './Logo.css';
+
 export const Logo = () => {
   return (
     <div className="logo">

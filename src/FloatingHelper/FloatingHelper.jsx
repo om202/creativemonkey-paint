@@ -1,5 +1,6 @@
 import React from "react";
-import Draggable from "react-draggable";  
+import Draggable from "react-draggable"; 
+import './FloatingHelper.css'; 
 
 export const FloatingHelper = ({ children, initial }) => {
   return (

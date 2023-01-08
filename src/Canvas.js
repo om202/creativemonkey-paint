@@ -12,7 +12,7 @@ export function Canvas() {
 
   useEffect(() => {
     prepareCanvas();
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <canvas

@@ -1,8 +1,8 @@
 import React from "react";
 import { Canvas } from "./Canvas";
 import { ButtonsGroup } from "./ButtonsGroup/ButtonsGroup";
-import { Logo } from "./Logo";
-import { FloatingHelper } from "./floating-helper/floatingHelper";
+import { Logo } from "./Logo/Logo";
+import { FloatingHelper } from "./FloatingHelper/FloatingHelper";
 
 function App() {
   return (
