@@ -1,8 +1,4 @@
 .logo {
-  z-index: 9999;
-  position: fixed;
-  top: 20px;
-  left: 30px;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -16,3 +12,4 @@
 .logo-pic {
   font-size: 2rem;
 }
+

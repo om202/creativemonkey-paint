@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCanvas } from "../CanvasContext";
 import { BsEraserFill } from "react-icons/bs";
 import { GrClearOption } from "react-icons/gr";
+import {RiDragMoveFill} from 'react-icons/ri';
 import "./ButtonsGroup.css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
@@ -22,6 +23,10 @@ export const ButtonsGroup = () => {
 
   return (
     <div className="buttons-group">
+    <Tooltip text={'Move Toolbox'}>
+        <div className="move-box"><RiDragMoveFill/></div>
+      </Tooltip>
+
       <Tooltip text={'Eraser'}>
         <button className="buttons-style" onClick={eraser}>
           <BsEraserFill />

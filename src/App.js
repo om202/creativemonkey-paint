@@ -8,9 +8,11 @@ function App() {
   return (
     <>
       <Canvas />
-      <Logo />
-      <FloatingHelper initial={[30,75]}>
-        <ButtonsGroup/>
+      <FloatingHelper initial={[30, 30]}>
+        <Logo />
+      </FloatingHelper>
+      <FloatingHelper initial={[30, 75]}>
+        <ButtonsGroup />
       </FloatingHelper>
     </>
   );
