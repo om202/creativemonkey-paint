@@ -3,9 +3,9 @@ import './Tooltip.css';
 
 export const Tooltip = ({ text, children }) => {
   return (
-    <div class="tooltip">
+    <div className="tooltip">
       {children}
-      <span class="tooltiptext">{text}</span>
+      <span className="tooltiptext">{text}</span>
     </div>
   );
 };
