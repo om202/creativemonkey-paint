@@ -21,7 +21,7 @@ export const CanvasProvider = ({ children }) => {
     context.lineCap = "round";
     context.lineJoin = "round";
     context.strokeStyle = pencilColor;
-    context.lineWidth = 3;
+    context.lineWidth = pencilSize;
     contextRef.current = context;
   };
 
@@ -59,7 +59,7 @@ export const CanvasProvider = ({ children }) => {
   const strokeColor = (color = "rgb(0,0,0)") => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
-    context.lineWidth = 3;
+    context.lineWidth = pencilSize;
     setPencilColor(color);
     context.strokeStyle = color;
   };
@@ -71,11 +71,12 @@ export const CanvasProvider = ({ children }) => {
     context.lineWidth = 30;
   };
 
-  const pencil = (size = 3) => {
+  const pencil = (size = pencilSize) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
     context.strokeStyle = pencilColor;
     context.lineWidth = size;
+    setPencilSize(size);
     contextRef.current = context;
   };
 
