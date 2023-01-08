@@ -99,7 +99,7 @@ export const CanvasProvider = ({ children }) => {
     contextRef.current.globalCompositeOperation = compositeOperation;
     var a = document.createElement('a');
     a.href = imageData;
-    a.download = 'download';
+    a.download = 'My-creative-work.png';
     document.body.appendChild(a);
     a.click();
 
