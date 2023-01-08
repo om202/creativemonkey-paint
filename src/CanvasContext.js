@@ -4,8 +4,8 @@ const CanvasContext = React.createContext();
 
 export const CanvasProvider = ({ children }) => {
   const [isDrawing, setIsDrawing] = useState(false);
-  const [pencilColor, setPencilColor] = useState('black');
-  const [pencilSize, setPencilSize] = useState(3)
+  const [pencilColor, setPencilColor] = useState("black");
+  const [pencilSize, setPencilSize] = useState(3);
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const defaultEraserWidth = 30;
@@ -18,6 +18,7 @@ export const CanvasProvider = ({ children }) => {
     canvas.style.height = `${window.innerHeight}px`;
 
     const context = canvas.getContext("2d");
+    context.fillStyle = "white";
     context.scale(2, 2);
     context.lineCap = "round";
     context.lineJoin = "round";
@@ -81,6 +82,29 @@ export const CanvasProvider = ({ children }) => {
     contextRef.current = context;
   };
 
+  const saveAsImage = () => {
+    const canvas = canvasRef.current;
+    //cache height and width
+    var w = canvas.width;
+    var h = canvas.height;
+    var data;
+    data = contextRef.current.getImageData(0, 0, w, h);
+    var compositeOperation = contextRef.current.globalCompositeOperation;
+    contextRef.current.globalCompositeOperation = "destination-over";
+    contextRef.current.fillStyle = "white";
+    contextRef.current.fillRect(0, 0, w, h);
+    var imageData = canvas.toDataURL("image/png");
+    contextRef.current.clearRect(0, 0, w, h);
+    contextRef.current.putImageData(data, 0, 0);
+    contextRef.current.globalCompositeOperation = compositeOperation;
+    var a = document.createElement('a');
+    a.href = imageData;
+    a.download = 'download';
+    document.body.appendChild(a);
+    a.click();
+
+  };
+
   return (
     <CanvasContext.Provider
       value={{
@@ -94,6 +118,7 @@ export const CanvasProvider = ({ children }) => {
         clearCanvas,
         draw,
         pencil,
+        saveAsImage,
       }}
     >
       {children}

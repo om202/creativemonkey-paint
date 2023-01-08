@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useCanvas } from "../CanvasContext";
 import { BsEraserFill } from "react-icons/bs";
 import { GrClearOption } from "react-icons/gr";
-import {RiDragMoveFill} from 'react-icons/ri';
+import {RiDragMoveFill, RiDeleteBin6Line, RiSave2Line} from 'react-icons/ri';
 import "./ButtonsGroup.css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
 export const ButtonsGroup = () => {
-  const { clearCanvas, strokeColor, eraser, pencil } = useCanvas();
+  const { clearCanvas, strokeColor, eraser, pencil, saveAsImage } = useCanvas();
 
   const [color, setColor] = useState("black");
 
@@ -47,11 +47,6 @@ export const ButtonsGroup = () => {
           <div className="pencil-large pencil" style={{ background: color }} />
         </button>
       </Tooltip>
-      <Tooltip text={"Clear everything"}>
-        <button className="buttons-style" onClick={clearCanvas}>
-          <GrClearOption />
-        </button>
-      </Tooltip>
       <Tooltip text={"Color picker"}>
         <button className="buttons-style">
           <input
@@ -59,6 +54,16 @@ export const ButtonsGroup = () => {
             id="color-picker"
             onChange={(e) => strokeColor(getRgb(e.target.value))}
           />
+        </button>
+      </Tooltip>
+      <Tooltip text={"Clear everything"}>
+        <button className="buttons-style" onClick={clearCanvas}>
+          <RiDeleteBin6Line/>
+        </button>
+      </Tooltip>
+      <Tooltip text={"Save as image"}>
+        <button className="buttons-style" onClick={saveAsImage}>
+          <RiSave2Line/>
         </button>
       </Tooltip>
     </div>
