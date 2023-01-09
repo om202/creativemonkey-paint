@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useCanvas } from "../CanvasContext";
 import { BsEraserFill } from "react-icons/bs";
-import { GrClearOption } from "react-icons/gr";
 import {RiDragMoveFill, RiDeleteBin6Line, RiSave2Line} from 'react-icons/ri';
 import "./ButtonsGroup.css";
 import { Tooltip } from "../Tooltip/Tooltip";
